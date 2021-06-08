@@ -23,6 +23,7 @@ python3.9 -m ensurepip
 
 # NodeJS
 curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
+fisher install jorgebucaran/nvm.fish
 nvm install 14
 set --universal nvm_default_version v14
 
@@ -30,11 +31,11 @@ set --universal nvm_default_version v14
 curl https://sh.rustup.rs -sSf | sh -s -- -y --profile default --component rls --default-toolchain nightly-x86_64-unknown-linux-gnu
 cargo install cargo-watch
 
+wget -qO- https://github.com/neovim/neovim/releases/download/v0.4.4/nvim-linux64.tar.gz | tar -xz
+
 fish_add_path (pwd)/nvim-linux64/bin/
 fish_add_path (pwd)/.local/bin
 fish_add_path (pwd)/.cargo/bin
-
-wget -qO- https://github.com/neovim/neovim/releases/download/v0.4.4/nvim-linux64.tar.gz | tar -xz
 
 # Setup dotfiles
 git clone https://github.com/FalseDev/dotfiles .dotfiles
