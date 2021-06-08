@@ -26,6 +26,7 @@ curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
 fisher install jorgebucaran/nvm.fish
 nvm install 14
 set --universal nvm_default_version v14
+npm install --global yarn
 
 # Install rust toolchain
 curl https://sh.rustup.rs -sSf | sh -s -- -y --profile default --component rls --default-toolchain nightly-x86_64-unknown-linux-gnu
@@ -33,8 +34,7 @@ cargo install cargo-watch
 
 # Nvim
 wget -qO- https://github.com/neovim/neovim/releases/download/v0.4.4/nvim-linux64.tar.gz | tar -xz
-sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
 # Fix path
 fish_add_path (pwd)/nvim-linux64/bin/
